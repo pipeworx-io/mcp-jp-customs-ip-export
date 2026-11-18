@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.pipeworx-io/jp-customs-ip-export",
+  "title": "Jp Customs Ip Export",
+  "description": "jp-customs-ip-export -- Japan Customs (税関, Ministry of Finance): the list of accepted applications…",
+  "version": "0.1.0",
+  "websiteUrl": "https://pipeworx.io/packs/jp-customs-ip-export",
+  "repository": {
+    "url": "https://github.com/pipeworx-io/mcp-jp-customs-ip-export",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://gateway.pipeworx.io/jp-customs-ip-export/mcp"
+    }
+  ]
+}

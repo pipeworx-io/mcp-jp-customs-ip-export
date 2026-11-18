@@ -1,0 +1,35 @@
+[
+  {
+    "name": "jp_customs_ip_export_search",
+    "description": "Search Japan Customs' list of accepted applications to suspend EXPORT of goods that infringe intellectual property rights (知的財産の輸出差止申立て: trademarks, designs, patents), by rights-holder company name or by brand, right or goods keyword (for example a trademark name or a product type). Each hit gives the right and its registration numbers, the goods concerned, the validity period as Customs prints it (Japanese era dates), the applying rights-holder company and its corporate number where printed, and a link to the Customs entry. Contact details are not returned and applicants that are not companies are dropped and counted. This is the export list only and a short list of currently accepted applications. Empty `name` lists all. No hit means no accepted application matching in the list as read now. Example: name=\"リコー\".",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Rights-holder company name, brand or goods keyword, Japanese or English. Leave empty to list every accepted application."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Maximum matches returned (1-50, default 20); `total_matches` always gives the full count."
+        }
+      }
+    }
+  },
+  {
+    "name": "jp_customs_ip_export_read",
+    "description": "Read one Japan Customs accepted export-suspension application by the `link` a search hit returned (only Customs' own entry pages are accepted): the right, registration numbers, goods, validity period and the applying rights-holder company with its corporate number where printed. Contact details are never returned. Example: link=\"https://www.customs.go.jp/mizugiwa/chiteki_ex/1000-2016.htm\".",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "link": {
+          "type": "string",
+          "description": "Entry link from jp_customs_ip_export_search, https://www.customs.go.jp/mizugiwa/chiteki_ex/<id>.htm."
+        }
+      },
+      "required": [
+        "link"
+      ]
+    }
+  }
+]
